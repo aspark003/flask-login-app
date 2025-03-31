@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!-- ✅ This line shows your icon in the browser tab -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("{{ url_for('static', filename='background.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background-color: rgba(241, 246, 250, 0.85);
+            width: 300px;
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar img {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .sidebar .snip {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .main {
+            flex: 1;
+            padding: 60px;
+            background-color: rgba(255, 255, 255, 0.75);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-box {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <!-- ✅ Logo image -->
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo">
+
+        <h2>Welcome, Neighbor!</h2>
+        <p>We’re excited to bring you this portal.</p>
+        <p><a href="#">HERE</a> to see features.</p>
+
+        <!-- ✅ Your snip image -->
+        <img src="{{ url_for('static', filename='my_snip.jpg') }}" alt="Snip" class="snip">
+    </div>
+
+    <div class="main">
+        <div class="login-box">
+            <h2>Log in to your account</h2>
+            <form action="/login" method="POST">
+                <label>Email</label>
+                <input type="email" name="email" required>
+
+                <label>Password</label>
+                <input type="password" name="password" required>
+
+                <button type="submit">Log In</button>
+
+                <a href="#">Forgot your login?</a>
+                <p>Don't have an account? <a href="#">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

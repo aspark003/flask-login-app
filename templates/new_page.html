@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DATA</title>
+</head>
+<body>
+    <h1>Personnel Information</h1>
+    <form action='/' method='GET'>
+        <input type="text" name="search_name" placeholder="Enter your first name" required>
+        <input type="text" name="search_lastname" placeholder="Enter your last name" required>
+        <button type="submit">SEARCH</button>
+    </form>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>AGE</th>
+            <th>GENDER</th>
+            <th>BIRTHDATE</th>
+            <th>SCHOOL</th>
+            <th>CAR</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for person in family_data %}
+                <tr>
+                    <td>{{person['first_name'] }}</td>
+                    <td>{{person['last_name'] }}</td>
+                    <td>{{person['age'] }}</td>
+                    <td>{{person['gender'] }}</td>
+                    <td>{{person['birthdate'] }}</td>
+                    <td>{{person['school'] }}</td>
+                    <td>{{person['car'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</html>
