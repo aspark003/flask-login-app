@@ -1,9 +1,11 @@
+<!-- templates/login.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
-    <!-- ✅ This line shows your icon in the browser tab -->
+    <title>MOL</title>
+
+    <!-- ✅ Shows icon in browser tab -->
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
     <style>
@@ -85,24 +87,28 @@
 
 <div class="container">
     <div class="sidebar">
-        <!-- ✅ Logo image -->
+        <!-- ✅ Logo -->
         <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo">
 
-        <h2>Welcome, Neighbor!</h2>
-        <p>We’re excited to bring you this portal.</p>
+        <h2>USMC</h2>
+        <p>YOUR FUTURE AWAITS YOU</p>
         <p><a href="#">HERE</a> to see features.</p>
 
-        <!-- ✅ Your snip image -->
+        <!-- ✅ Snip image -->
         <img src="{{ url_for('static', filename='my_snip.jpg') }}" alt="Snip" class="snip">
     </div>
 
     <div class="main">
         <div class="login-box">
             <h2>Log in to your account</h2>
+
+            <!-- ✅ Form matches the Python route -->
             <form action="/login" method="POST">
+                <!-- ✅ Name matches: request.form.get('email') -->
                 <label>Email</label>
                 <input type="email" name="email" required>
 
+                <!-- ✅ Name matches: request.form.get('password') -->
                 <label>Password</label>
                 <input type="password" name="password" required>
 
@@ -117,4 +123,3 @@
 
 </body>
 </html>
-
